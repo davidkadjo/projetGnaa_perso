@@ -1,0 +1,593 @@
+<div id="kt_app_sidebar" class="app-sidebar flex-column" data-kt-drawer="true" data-kt-drawer-name="app-sidebar"
+	data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="225px"
+	data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_app_sidebar_mobile_toggle">
+<!--begin::Logo-->
+<div class="app-sidebar-logo px-6" id="kt_app_sidebar_logo">
+    <!--begin::Logo image-->
+    <a href="/dashboard">
+        <img alt="Logo" src="metronic/media/LGO MFP.jpg" class="h-25px app-sidebar-logo-default theme-light-show"/>
+        <img alt="Logo" src="metronic/media/LGO MFP.jpg" class="h-25px app-sidebar-logo-default theme-dark-show"/>
+        <img alt="Logo" src="metronic/media/LGO MFP.jpg" class="h-20px app-sidebar-logo-minimize"/>
+    </a>
+    <!--end::Logo image-->
+    <!--begin::Sidebar toggle-->
+    <!--begin::Minimized sidebar setup:
+        if (isset($_COOKIE["sidebar_minimize_state"]) && $_COOKIE["sidebar_minimize_state"] === "on") {
+            1. "src/js/layout/sidebar.js" adds "sidebar_minimize_state" cookie value to save the sidebar minimize state.
+            2. Set data-kt-app-sidebar-minimize="on" attribute for body tag.
+            3. Set data-kt-toggle-state="active" attribute to the toggle element with "kt_app_sidebar_toggle" id.
+            4. Add "active" class to to sidebar toggle element with "kt_app_sidebar_toggle" id.
+        }
+        -->
+    <div id="kt_app_sidebar_toggle" class="app-sidebar-toggle btn btn-icon btn-shadow btn-sm btn-color-muted btn-active-color-primary body-bg h-30px w-30px position-absolute top-50 start-100 translate-middle rotate" data-kt-toggle="true" data-kt-toggle-state="active" data-kt-toggle-target="body" data-kt-toggle-name="app-sidebar-minimize">
+        <i class="ki-duotone ki-double-left fs-2 rotate-180">
+            <span class="path1"></span>
+            <span class="path2"></span>
+        </i>
+    </div>
+    <!--end::Sidebar toggle-->
+</div>
+<!--end::Logo-->
+<!--begin::sidebar menu-->
+<div class="app-sidebar-menu overflow-hidden flex-column-fluid">
+    <!--begin::Menu wrapper-->
+    <div id="kt_app_sidebar_menu_wrapper" class="app-sidebar-wrapper hover-scroll-overlay-y my-5" data-kt-scroll="true" data-kt-scroll-activate="true" 
+        data-kt-scroll-height="auto" data-kt-scroll-dependencies="#kt_app_sidebar_logo, #kt_app_sidebar_footer" data-kt-scroll-wrappers="#kt_app_sidebar_menu" 
+            data-kt-scroll-offset="5px" data-kt-scroll-save-state="true">
+        <!--begin::Menu-->
+        <div class="menu menu-column menu-rounded menu-sub-indention px-3" id="#kt_app_sidebar_menu" data-kt-menu="true" data-kt-menu-expand="false">
+            <!--begin:Menu item-->
+            <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                <!--begin:Menu link-->
+                <a class="menu-item pt-4 " href="/dashboard">
+                <span class="menu-link">
+                    <span class="menu-icon">
+                        <i class="ki-duotone ki-element-11 fs-2">
+                            <span class="path1"></span>
+                            <span class="path2"></span>
+                            <span class="path3"></span>
+                            <span class="path4"></span>
+                        </i>
+                    </span>
+                    <span class="menu-title">Accueil</span>
+                </span>
+                </a>
+                <!--end:Menu link-->
+            </div>
+            <!--end:Menu item-->
+            <!--begin:Menu item-->
+            <!--begin:Menu item-->
+            {# <div class="menu-item pt-4">
+                <!--begin:Menu content-->
+                <div class="menu-content">
+                    <span class="menu-heading fw-bold text-uppercase fs-7">GESTION utilisateurs</span>
+                </div>
+                <!--end:Menu content-->
+            </div> #}
+            <!--end:Menu item-->
+            <div data-kt-menu-trigger="click" class="menu-item  menu-accordion ">
+                <!--begin:Menu link-->
+                <span class="menu-link ">
+                     <span class="menu-icon">
+                         <i class="ki-duotone ki-shield-tick fs-2">
+                            <span class="path1"></span>
+                            <span class="path2"></span>
+                          
+                        </i> 
+                    </span> 
+                    <span class="menu-title menu-heading fw-bold text-uppercase fs-7">GESTION UTILISATEURS</span>
+                    <span class="menu-arrow"></span>
+                </span>
+                <!--end:Menu link-->
+                <!--begin:Menu sub-->
+                <div class="menu-sub menu-sub-accordion">
+                <!--begin:Menu item-->
+                    <div class="menu-item">
+                        <!--begin:Menu link-->
+                        <a class="menu-link " href="/privilege">
+                            <span class="menu-icon">
+                                <i class="ki-duotone ki-abstract-25 fs-2">
+                                    <span class="path1"></span>
+                                    <span class="path2"></span>
+                                </i>
+                            </span>
+                            <span class="menu-title">Privilèges</span>
+                        </a>
+                        <!--end:Menu link-->
+                    </div>
+                    <!--end:Menu item-->
+                    <div class="menu-item">
+                        <!--begin:Menu link-->
+                        <a class="menu-link " href="/role">
+                            <span class="menu-icon">
+                                <i class="ki-duotone ki-abstract-25 fs-2">
+                                    <span class="path1"></span>
+                                    <span class="path2"></span>
+                                </i> 
+                            </span>
+                            <span class="menu-title">Rôles</span>
+                        </a>
+                        <!--end:Menu link-->
+                    </div>
+                    <!--end:Menu item-->
+                    <div class="menu-item">
+                        <!--begin:Menu link-->
+                        <a class="menu-link " href="/utilisateurs">
+                            <span class="menu-icon">
+                                <i class="ki-duotone ki-user fs-2">
+                                    <span class="path1"></span>
+                                    <span class="path2"></span>
+                                </i>
+                            </span>
+                            <span class="menu-title">utilisateurs</span>
+                        </a>
+                        <!--end:Menu link-->
+                    </div>
+                    <!--end:Menu item-->
+                    {# <div class="menu-item">
+                        <!--begin:Menu link-->
+                        <a class="menu-link " href="/compte">
+                            <span class="menu-icon">
+                                <i class="ki-duotone ki-user fs-2">
+                                    <span class="path1"></span>
+                                    <span class="path2"></span>
+                                </i>
+                            </span>
+                            <span class="menu-title">Mon Compte</span>
+                        </a>
+                        <!--end:Menu link-->
+                    </div> #}
+               </div>
+           </div>
+           <!--End:Menu item-->
+           <!--End:Menu item-->
+            <!--begin:Menu item-->
+            <div data-kt-menu-trigger="click" class="menu-item menu-accordion ">
+                <!--begin:Menu link-->
+                <span class="menu-link ">
+                    <span class="menu-icon">
+                         <i class="ki-duotone ki-element-plus fs-2">
+                            <span class="path1"></span>
+                            <span class="path2"></span>
+                            <span class="path3"></span>
+                            <span class="path4"></span>
+                            <span class="path5"></span>
+                        </i> 
+                    </span>
+                    <span class="menu-title menu-heading fw-bold text-uppercase fs-7">GESTION DES ACTES</span>
+                    <span class="menu-arrow"></span>
+                </span>
+                <!--end:Menu link-->
+                <!--begin:Menu sub-->
+                <div class="menu-sub menu-sub-accordion">
+                    
+                    <!--begin:Menu item-->
+                    <div class="menu-item">
+                        <!--begin:Menu link-->
+                       
+                        <a class="menu-link " href="/Nouvelle demandes d’actes ">
+                            <span class="menu-bullet">
+                                <span class="bullet bullet-dot">
+                                    <span class="path1"></span>
+                                    </span>
+                            </span>
+                            <span class="menu-title">Liste des demandes d’actes</span>
+                        </a>
+                        <a class="menu-link " href="/Mes demandes d’actes ">
+                            <span class="menu-bullet">
+                                <span class="bullet bullet-dot">
+                                    <span class="path1"></span>
+                                    </span>
+                            </span>
+                            <span class="menu-title">Mes demandes d’actes </span>
+                        </a>
+                        <a class="menu-link " href="/Mes actes">
+                            <span class="menu-bullet">
+                                <span class="bullet bullet-dot">
+                                    <span class="path1"></span>
+                                    </span>
+                            </span>
+                            <span class="menu-title">Mes actes </span>
+                        </a>
+                        <a class="menu-link " href="/Production d’actes">
+                            <span class="menu-bullet">
+                                <span class="bullet bullet-dot">
+                                    <span class="path1"></span>
+                                    </span>
+                            </span>
+                            <span class="menu-title">Production d’actes </span>
+                        </a>
+                        <a class="menu-link " href="/Imputation">
+                            <span class="menu-bullet">
+                                <span class="bullet bullet-dot">
+                                    <span class="path1"></span>
+                                    </span>
+                            </span>
+                            <span class="menu-title">Imputation </span>
+                        </a>
+                        <a class="menu-link " href="/Validation d’actes">
+                            <span class="menu-bullet">
+                                <span class="bullet bullet-dot">
+                                    <span class="path1"></span>
+                                    </span>
+                            </span>
+                            <span class="menu-title">Validation d’actes </span>
+                        </a>
+                        <a class="menu-link " href="/Signature d’actes">
+                            <span class="menu-bullet">
+                                <span class="bullet bullet-dot">
+                                    <span class="path1"></span>
+                                    </span>
+                            </span>
+                            <span class="menu-title">Signature d’actes </span>
+                        </a>
+                        <a class="menu-link " href="/Actes signés">
+                            <span class="menu-bullet">
+                                <span class="bullet bullet-dot">
+                                    <span class="path1"></span>
+                                    </span>
+                            </span>
+                            <span class="menu-title">Actes signés </span>
+                        </a>
+                        <!--end:Menu link-->
+                    </div>
+                    
+                    <!--end:Menu item-->
+                </div>
+                <!--end:Menu sub-->
+            </div>
+            <!--end:Menu item-->
+
+            <!--begin:Menu item-->
+            <div data-kt-menu-trigger="click" class="menu-item menu-accordion ">
+                <!--begin:Menu link-->
+                 <span class="menu-link ">
+                   <span class="menu-icon">
+                        <i class="ki-duotone ki-abstract-41 fs-2">
+                            <span class="path1"></span>
+                            <span class="path2"></span>
+                        </i>
+                    </span> 
+                    <span class="menu-title menu-heading fw-bold text-uppercase fs-7">GESTION DES DECISIONS</span>
+                    <span class="menu-arrow"></span>
+                </span>
+                <!--end:Menu link-->
+                <!--begin:Menu sub-->
+                <div class="menu-sub menu-sub-accordion">
+                    <!--begin:Menu item-->
+                    <div class="menu-item">
+                        <!--begin:Menu link-->
+                        <a class="menu-link " href="/Décisions">
+                            <span class="menu-bullet">
+                                <span class="bullet bullet-dot"></span>
+                            </span>
+                            <span class="menu-title">Décisions</span>
+                        </a>
+                        <!--end:Menu link-->
+                    </div>
+                    <!--end:Menu item-->
+                    <!--begin:Menu item-->
+                    <div class="menu-item">
+                        <!--begin:Menu link-->
+                        <a class="menu-link " href="/Validation de Décisions ">
+                            <span class="menu-bullet">
+                                <span class="bullet bullet-dot"></span>
+                            </span>
+                            <span class="menu-title">Validation de décisions </span>
+                        </a>
+                        <!--end:Menu link-->
+                    </div>
+                    <!--end:Menu item-->
+    
+                </div>
+                <!--end:Menu sub-->
+            </div>
+            <!--end:Menu item-->
+            <!--begin:Menu item-->
+            <div data-kt-menu-trigger="click" class="menu-item menu-accordion ">
+                <!--begin:Menu link-->
+                <span class="menu-link ">
+                    <span class="menu-icon">
+                        <i class="ki-duotone ki-abstract-41 fs-2">
+                            <span class="path1"></span>
+                            <span class="path2"></span>
+                        </i>
+                    </span>
+                    <span class="menu-title menu-heading fw-bold text-uppercase fs-7">GESTION DES MUTATIONS</span>
+                    <span class="menu-arrow"></span>
+                </span>
+                <!--end:Menu link-->
+                <!--begin:Menu sub-->
+                <div class="menu-sub menu-sub-accordion">
+                    <!--begin:Menu item-->
+                    <div class="menu-item">
+                        <!--begin:Menu link-->
+                        <a class="menu-link " href="/Mes demandes de mutation ">
+                            <span class="menu-bullet">
+                                <span class="bullet bullet-dot"></span>
+                            </span>
+                            <span class="menu-title">Mes demandes de mutation </span>
+                        </a>
+                        <!--end:Menu link-->
+                    </div>
+                    <!--end:Menu item-->
+                    <!--begin:Menu item-->
+                    <div class="menu-item">
+                        <!--begin:Menu link-->
+                        <a class="menu-link " href="/Demandes de mutation  ">
+                            <span class="menu-bullet">
+                                <span class="bullet bullet-dot"></span>
+                            </span>
+                            <span class="menu-title">Demandes de mutation </span>
+                        </a>
+                        <!--end:Menu link-->
+                    </div>
+                    <!--end:Menu item-->
+                    <!--begin:Menu item-->
+                    <div class="menu-item">
+                        <!--begin:Menu link-->
+                        <a class="menu-link " href="/Demandes de mutation  ">
+                            <span class="menu-bullet">
+                                <span class="bullet bullet-dot"></span>
+                            </span>
+                            <span class="menu-title"> Mutation pour nécessité de service </span>
+                        </a>
+                        <!--end:Menu link-->
+                    </div>
+                    <!--end:Menu item-->
+                </div>
+                <!--end:Menu sub-->
+            </div>
+            <!--end:Menu item-->
+            <!--begin:Menu item-->
+            <div data-kt-menu-trigger="click" class="menu-item menu-accordion ">
+                <!--begin:Menu link-->
+                <span class="menu-link ">
+                    <span class="menu-icon">
+                        {# ki-duotone ki-abstract-41 fs-2 #}
+                        <i class=" ki-duotone ki-abstract-41 fs-2">
+                            <span class="path1"></span>
+                            <span class="path2"></span>
+                        </i>
+                    </span>
+                    <span class="menu-title menu-heading fw-bold text-uppercase fs-7">GESTION DES AGENTS</span>
+                    <span class="menu-arrow"></span>
+                </span>
+                <!--end:Menu link-->
+                <!--begin:Menu sub-->
+                <div class="menu-sub menu-sub-accordion">
+                    <!--begin:Menu item-->
+                    <div class="menu-item">
+                        <!--begin:Menu link-->
+                        <a class="menu-link " href="/Tableau des agent">
+                            <span class="menu-bullet">
+                                <span class="bullet bullet-dot"></span>
+                            </span>
+                            <span class="menu-title">Tableau des agents</span>
+                        </a>
+                        <!--end:Menu link-->
+                    </div>
+                    <!--end:Menu item-->
+                    <!--begin:Menu item-->
+                    <div class="menu-item">
+                        <!--begin:Menu link-->
+                        <a class="menu-link " href="/Liste de présence">
+                            <span class="menu-bullet">
+                                <span class="bullet bullet-dot"></span>
+                            </span>
+                            <span class="menu-title">Liste de présence</span>
+                        </a>
+                        <!--end:Menu link-->
+                    </div>
+                    <!--end:Menu item-->
+                    </div>
+                <!--end:Menu sub-->
+            </div>
+            <!--end:Menu item-->
+            <!--begin:Menu item-->
+            <div data-kt-menu-trigger="click" class="menu-item  menu-accordion  ">
+                <!--begin:Menu link-->
+                <span class="menu-link ">
+                    <span class="menu-icon">
+                        <i class="ki-duotone ki-element-7 fs-2">
+                            <span class="path1"></span>
+                            <span class="path2"></span>
+                        </i>
+                    </span>
+                    <span class="menu-title menu-heading fw-bold text-uppercase fs-7">Gestion de courriers</span>
+                    <span class="menu-arrow"></span>
+                </span>
+                <!--end:Menu link-->
+                <!--begin:Menu sub-->
+                <div class="menu-sub menu-sub-accordion">
+                     <!--begin:Menu item-->
+                    <div class="menu-item">
+                        <!--begin:Menu link-->
+                        <a class="menu-link " href="/inf/concours/Arrivés">
+                            <span class="menu-bullet">
+                                <span class="bullet bullet-dot"></span>
+                            </span>
+                            <span class="menu-title">Arrivés</span>
+                        </a>
+                        <!--end:Menu link-->
+                    </div>
+                    <!--end:Menu item-->
+                    <!--begin:Menu item-->
+                    <div class="menu-item">
+                        <!--begin:Menu link-->
+                        <a class="menu-link " href="#">
+                            <span class="menu-bullet">
+                                <span class="bullet bullet-dot"></span>
+                            </span>
+                            <span class="menu-title">Départ</span>
+                        </a>
+                        <!--end:Menu link-->
+                    </div>
+                    <!--end:Menu item-->
+                    <!--begin:Menu item-->
+                    <div class="menu-item">
+                        <!--begin:Menu link-->
+                        <a class="menu-link " href="#">
+                            <span class="menu-bullet">
+                                <span class="bullet bullet-dot"></span>
+                            </span>
+                            <span class="menu-title">Imputation</span>
+                        </a>
+                        <!--end:Menu link-->
+                    </div>
+                    <!--end:Menu item-->
+                    <!--begin:Menu item-->
+                    <div class="menu-item">
+                        <!--begin:Menu link-->
+                        <a class="menu-link " href="#">
+                            <span class="menu-bullet">
+                                <span class="bullet bullet-dot"></span>
+                            </span>
+                            <span class="menu-title">Traitement</span>
+                        </a>
+                        <!--end:Menu link-->
+                    </div>
+                    <!--end:Menu item-->
+                </div>
+                <!--end:Menu sub-->
+            </div>
+            <!--end:Menu item-->
+            
+            <div data-kt-menu-trigger="click" class="menu-item  menu-accordion ">
+                <!--begin:Menu link-->
+                <span class="menu-link ">
+                    <span class="menu-icon">
+                        <i class="ki-duotone ki-address-book fs-2">
+                            <span class="path1"></span>
+                            <span class="path2"></span>
+                            <span class="path3"></span> 
+                        </i>
+                    </span>
+                    <span class="menu-title menu-heading fw-bold text-uppercase fs-7">PARAMETRAGES</span>
+                    <span class="menu-arrow"></span>
+                </span>
+                <!--end:Menu link-->
+                <!--begin:Menu sub-->
+                <div class="menu-sub menu-sub-accordion">
+                <!--begin:Menu item-->
+                    <div class="menu-item">
+                        <!--begin:Menu link-->
+                        <a class="menu-link " href="/annuaire">
+                            <span class="menu-icon">
+                                <i class="ki-duotone ki-abstract-25 fs-2">
+                                    <span class="path1"></span>
+                                    <span class="path2"></span>
+                                </i>
+                            </span>
+                            <span class="menu-title">Annuaire téléphonique</span>
+                        </a>
+                        <!--end:Menu link-->
+                    </div>
+                    <!--end:Menu item-->
+               </div>
+           </div>
+           <!--End:Menu item-->
+
+            <!--begin:Menu item-->
+            {# <div class="menu-item pt-4">
+                <!--begin:Menu content-->
+                <div class="menu-content">
+                    <span class="menu-heading fw-bold text-uppercase fs-7">ACCESSOIRES</span>
+                </div>
+                <!--end:Menu content-->
+            </div> #}
+            <!--end:Menu item-->
+            <div data-kt-menu-trigger="click" class="menu-item  menu-accordion ">
+                <!--begin:Menu link-->
+                {# <span class="menu-link {{ path('app_banniere') }} {{ path('app_logo') }} {{ path('app_armoirie') }} {{ path('app_intro') }}">
+                    <span class="menu-icon">
+                        <i class="ki-duotone ki-call fs-2">
+                            <span class="path1"></span>
+                            <span class="path2"></span>
+                            <span class="path3"></span>
+                            <span class="path4"></span>
+                            <span class="path5"></span>
+                            <span class="path6"></span>
+                            <span class="path7"></span>
+                            <span class="path8"></span>
+                        </i>
+                    </span>
+                    <span class="menu-title">Animation</span>
+                    <span class="menu-arrow"></span>
+                </span> #}
+                <!--end:Menu link-->
+                <!--begin:Menu sub-->
+                <div class="menu-sub menu-sub-accordion">
+                    <!--begin:Menu item-->
+                  {#   <div class="menu-item">
+                        <!--begin:Menu link-->
+                        <a class="menu-link {{ path('app_banniere') }}" href="/banniere">
+                            <span class="menu-icon">
+                                <i class="ki-duotone ki-map fs-2">
+                                    <span class="path1"></span>
+                                    <span class="path2"></span>
+                                </i>
+                            </span>
+                            <span class="menu-title">Bannière</span>
+                        </a>
+                        <!--end:Menu link-->
+                    </div> #}
+                    <!--end:Menu item-->
+                    <!--begin:Menu item-->
+                   {#  <div class="menu-item">
+                        <!--begin:Menu link-->
+                        <a class="menu-link {{ path('app_logo') }}" href="/logo">
+                            <span class="menu-icon">
+                                <i class="ki-duotone ki-text-align-center fs-2">
+                                    <span class="path1"></span>
+                                    <span class="path2"></span>
+                                </i>
+                            </span>
+                            <span class="menu-title">Logo</span>
+                        </a>
+                        <!--end:Menu link-->
+                    </div>
+                    <!--end:Menu item--> #}
+                    <!--begin:Menu item-->
+                  {#   <div class="menu-item">
+                        <!--begin:Menu link-->
+                        <a class="menu-link {{ path('app_armoirie') }}" href="/armoirie">
+                            <span class="menu-icon">
+                                <i class="ki-duotone ki-element-plus fs-2">
+                                    <span class="path1"></span>
+                                    <span class="path2"></span>
+                                </i>
+                            </span>
+                            <span class="menu-title">Armoirie</span>
+                        </a>
+                        <!--end:Menu link-->
+                    </div> #}
+                    <!--end:Menu item-->
+                    <!--begin:Menu item-->
+                  {#   <div class="menu-item">
+                        <!--begin:Menu link-->
+                        <a class="menu-link {{ path('app_intro') }}" href="/intro">
+                            <span class="menu-icon">
+                                <i class="ki-duotone ki-rocket fs-2">
+                                    <span class="path1"></span>
+                                    <span class="path2"></span>
+                                </i>
+                            </span>
+                            <span class="menu-title">Page d'intro</span>
+                        </a>
+                        <!--end:Menu link-->
+                    </div> #}
+                    <!--end:Menu item-->
+              </div>
+            </div>
+        
+        </div>
+        <!--end::Menu-->
+    </div>
+    <!--end::Menu wrapper-->
+</div>
+<!--end::sidebar menu-->
+	<!--begin::Footer-->
+
+	<!--end::Footer-->
+</div>
