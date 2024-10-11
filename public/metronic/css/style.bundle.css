@@ -50340,8 +50340,7 @@ body {
     --bs-app-sidebar-base-toggle-btn-bg-color: #ffffff;
     --bs-app-sidebar-light-bg-color: #ffffff;
     --bs-app-sidebar-light-box-shadow: 0 0 28px 0 rgba(82, 63, 105, 0.05);
-    --bs-app-sidebar-light-separator-color: #e4e6ef;
-    --bs-app-sidebar-light-scrollbar-color: #f4f4f4;
+    --bs-app-sidebar-light-separator-color: #e4e6ef;  
     --bs-app-sidebar-light-scrollbar-color-hover:  #7e8299;
     --bs-app-sidebar-light-menu-heading-color: #b5b5c3;
     --bs-app-sidebar-light-menu-link-bg-color-active: #f4f6fa;
